@@ -1,0 +1,12 @@
+body {
+  background: #202028;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  text-align: center;
+}
+
+canvas {
+  border: 0.2rem solid #ffffff;
+  height: 90vh;
+}
