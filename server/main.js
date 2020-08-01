@@ -29,9 +29,12 @@ server.on('connection', conn => {
             session.join(client);
             sessions.set(session.id, session);
             client.send({ type: 'session-created', id: session.id });
+        } else if (data.type === 'join-session') {
+          const session = sessions.get(data.id)
+          session.join(client)
         }
 
-        console.log(sessions);
+        console.log("Sessions", sessions);
     });
 
     conn.on('close', () => {
