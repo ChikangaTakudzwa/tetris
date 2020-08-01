@@ -1,8 +1,6 @@
 const WebSocketServer = require('ws').Server;
-const Session = require('./session')
-const Client = require('./client')
-
-
+const Session = require('./session');
+const Client = require('./client');
 
 const server = new WebSocketServer({ port: 9000 });
 
@@ -29,7 +27,7 @@ server.on('connection', conn => {
             const session = new Session(id);
             session.join(client);
             sessions.set(session.id, session);
-            console.log(sessions); 
+            client.send(session.id);
         }
 
         console.log(sessions);
