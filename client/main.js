@@ -2,7 +2,7 @@ const tetrisManager = new TetrisManager(document);
 const localTetris = tetrisManager.createPlayer();
 
 const connectionManager = new ConnectionManager();
-connectionManager.connect('ws://localhost: 9000');
+connectionManager.connect('ws://localhost:9000');
 
 const keyListener = event => {
     [
